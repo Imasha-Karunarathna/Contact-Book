@@ -8,66 +8,66 @@ class ContactBook:
         self.root = root
         self.root.title("Contact Book")
         self.root.geometry("400x500")  # Set the window size
-        self.root.config(bg="#000000")  # Background color
+        self.root.config(bg="#FFC0CB")  # Light pink background color
 
         # Initialize contacts dictionary
         self.contacts = {}
         self.load_contacts()  # Load contacts from file
 
         # Title Label
-        self.title_label = tk.Label(root, text="Contact Book", font=("Arial", 18, "bold"), bg="#FC02B0", pady=10)
+        self.title_label = tk.Label(root, text="Contact Book", font=("Arial", 48, "bold","italic"), bg="#FFC0CB", pady=10, fg="#FF69B4")
         self.title_label.pack()
 
         # Frame to hold the entry fields and labels
-        self.frame = tk.Frame(root, bg="#FC02B0")
+        self.frame = tk.Frame(root, bg="#FFC0CB")
         self.frame.pack(pady=10)
 
         # GUI Elements
-        self.name_label = tk.Label(self.frame, text="Name:", font=("Arial", 12), bg="#FC02B0")
+        self.name_label = tk.Label(self.frame, text="Name:", font=("Arial", 12), bg="#FF69B4", fg="black")
         self.name_label.grid(row=0, column=0, padx=5, pady=5, sticky="e")
         self.name_entry = tk.Entry(self.frame, font=("Arial", 12), width=25)
         self.name_entry.grid(row=0, column=1, padx=5, pady=5)
 
-        self.phone_label = tk.Label(self.frame, text="Phone Number:", font=("Arial", 12), bg="#FC02B0")
+        self.phone_label = tk.Label(self.frame, text="Phone Number:", font=("Arial", 12), bg="#FF69B4", fg="black")
         self.phone_label.grid(row=1, column=0, padx=5, pady=5, sticky="e")
         self.phone_entry = tk.Entry(self.frame, font=("Arial", 12), width=25)
         self.phone_entry.grid(row=1, column=1, padx=5, pady=5)
 
-        self.email_label = tk.Label(self.frame, text="Email:", font=("Arial", 12), bg="#FC02B0")
+        self.email_label = tk.Label(self.frame, text="Email:", font=("Arial", 12), bg="#FF69B4", fg="black")
         self.email_label.grid(row=2, column=0, padx=5, pady=5, sticky="e")
         self.email_entry = tk.Entry(self.frame, font=("Arial", 12), width=25)
         self.email_entry.grid(row=2, column=1, padx=5, pady=5)
 
-        self.address_label = tk.Label(self.frame, text="Address:", font=("Arial", 12), bg="#FC02B0")
+        self.address_label = tk.Label(self.frame, text="Address:", font=("Arial", 12), bg="#FF69B4", fg="black")
         self.address_label.grid(row=3, column=0, padx=5, pady=5, sticky="e")
         self.address_entry = tk.Entry(self.frame, font=("Arial", 12), width=25)
         self.address_entry.grid(row=3, column=1, padx=5, pady=5)
 
         # Buttons Frame
-        self.button_frame = tk.Frame(root, bg="#000000")
+        self.button_frame = tk.Frame(root, bg="#FFC0CB")
         self.button_frame.pack(pady=10)
 
-        self.add_button = tk.Button(self.button_frame, text="Add Contact", command=self.add_contact, font=("Arial", 12), bg="#FC02B0", fg="black")
+        self.add_button = tk.Button(self.button_frame, text="Add Contact", command=self.add_contact, font=("Arial", 12), bg="#FF69B4", fg="black")
         self.add_button.grid(row=0, column=0, padx=5, pady=5)
 
-        self.view_button = tk.Button(self.button_frame, text="View Contacts", command=self.view_contacts, font=("Arial", 12), bg="#FC02B0", fg="black")
+        self.view_button = tk.Button(self.button_frame, text="View Contacts", command=self.view_contacts, font=("Arial", 12), bg="#FF69B4", fg="black")
         self.view_button.grid(row=0, column=1, padx=5, pady=5)
 
-        self.search_label = tk.Label(root, text="Search by Name or Phone", font=("Arial", 12), bg="#FC02B0")
+        self.search_label = tk.Label(root, text="Search by Name or Phone", font=("Arial", 12), bg="#FFC0CB", fg="black")
         self.search_label.pack(pady=5)
         self.search_entry = tk.Entry(root, font=("Arial", 12), width=25)
         self.search_entry.pack(pady=5)
-        self.search_button = tk.Button(root, text="Search", command=self.search_contact, font=("Arial", 12), bg="#FC02B0", fg="black")
+        self.search_button = tk.Button(root, text="Search", command=self.search_contact, font=("Arial", 12), bg="#FF69B4", fg="black")
         self.search_button.pack(pady=5)
 
-        self.update_button = tk.Button(root, text="Update Contact", command=self.update_contact, font=("Arial", 12), bg="#FC02B0", fg="black")
+        self.update_button = tk.Button(root, text="Update Contact", command=self.update_contact, font=("Arial", 12), bg="#FF69B4", fg="black")
         self.update_button.pack(pady=5)
 
-        self.delete_button = tk.Button(root, text="Delete Contact", command=self.delete_contact, font=("Arial", 12), bg="#FC02B0", fg="black")
+        self.delete_button = tk.Button(root, text="Delete Contact", command=self.delete_contact, font=("Arial", 12), bg="#FF69B4", fg="black")
         self.delete_button.pack(pady=5)
 
         # Listbox to display contacts
-        self.contact_listbox = tk.Listbox(root, font=("Arial", 12), width=40, height=10, bg="#FC02B0", fg="black")
+        self.contact_listbox = tk.Listbox(root, font=("Arial", 12 ," bold"), width=40, height=10, bg="#FFC0CB", fg="#FF69B4")
         self.contact_listbox.pack(pady=10)
         self.update_contact_listbox()
 
